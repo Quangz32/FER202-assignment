@@ -55,7 +55,8 @@ export default function FeedBack() {
   };
 
   return (
-    <Container>
+    <Container className="text-center">
+      <h3 className="mb-5">Feedbacks</h3>
       <Row>
         <Col sm={1} lg={1} md={1} className="d-flex align-items-center">
           <div

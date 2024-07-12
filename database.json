@@ -62,5 +62,31 @@
       "content": "I love this chair! The ergonomic design provides great support for my back, and the cushioning is just right. It fits perfectly in my study room and adds a touch of elegance to the space. The assembly was also quick and easy. Overall, a fantastic chair!",
       "timestamp": "2024-07-10 09:15:00"
     }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "First Time Home Owner Ideas",
+      "author": "Kristin Watson",
+      "date": "2024-02-10",
+      "content": "Content goes here!",
+      "cover_image": "post-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "10 Tips for Decorating Small Spaces",
+      "author": "Emily Johnson",
+      "date": "2024-03-15",
+      "content": "Content goes here!",
+      "cover_image": "post-3.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Choosing the Right Colors for Your Living Room",
+      "author": "Michael Thompson",
+      "date": "2024-04-20",
+      "content": "Content goes here!",
+      "cover_image": "post-3.jpg"
+    }
   ]
 }

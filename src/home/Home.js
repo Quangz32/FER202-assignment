@@ -8,6 +8,7 @@ import HotProduct from "./HotProduct";
 import WeHelp from "./WeHelp";
 import FeedBack from "./FeedBack";
 import Footer from "../shared/Footer";
+import HotBlogs from "./HotBlogs";
 
 export default function Home() {
   const style = {
@@ -78,6 +79,10 @@ export default function Home() {
 
       <div style={style.section}>
         <FeedBack></FeedBack>
+      </div>
+
+      <div style={style.section}>
+        <HotBlogs></HotBlogs>
       </div>
 
       <div style={style.bgGreen}>
