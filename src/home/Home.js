@@ -3,6 +3,8 @@ import MyNavBar from "../shared/MyNavbar";
 import { Row, Col, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import WhyChooseUs from "./WhyChooseUs";
+import HotProduct from "./HotProduct";
 
 export default function Home() {
   const style = {
@@ -10,22 +12,12 @@ export default function Home() {
       backgroundColor: "#3b5d50",
     },
     exploreBtn: { fontWeight: "550", "&:hover": {} },
+    section: {
+      marginTop: "128px",
+      marginBottom: "128px",
+    },
   };
 
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProduct = async () => {
-      await axios.get("http://localhost:9999/products").then((res) => {
-        // console.log(res);
-        setProducts(res.data);
-      });
-    };
-
-    fetchProduct();
-  }, []);
-
-  console.log(products);
   return (
     <div>
       {/* ------- Hero start --------*/}
@@ -71,91 +63,17 @@ export default function Home() {
       {/* ------- Hero End --------*/}
 
       {/* ----- Product Start ----- */}
-      <div className="mt-5 mb-5">
-        <Container>
-          <Row>
-            <Col md={12} lg={3}>
-              <h2 className="mb-4">Crafted with excellent material.</h2>
-              <p className="mb-4 text-secondary">
-                Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                vulputate velit imperdiet dolor tempor tristique.{" "}
-              </p>
-              <p>
-                <Button variant="secondary" className="rounded-pill mb-3" active>
-                  <span className="mx-2">Explore</span>
-                </Button>
-              </p>
-            </Col>
-            {products?.map((product) => (
-              <Col key={product.id} row={12} md={4} lg={3} className="mb-5 mb-md-0">
-                {/* <div style={{ height: "100px", backgroundColor: "red" }}></div> */}
-                <div className="text-center">
-                  <img className="img-fluid" src={`images/${product.image}`}></img>
-                  <h5>{product.name}</h5>
-                  <strong className="fs-4">${product.price}</strong>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
+      <div style={style.section}>
+        <HotProduct></HotProduct>
       </div>
+
       {/* ----- Product end ----- */}
 
       {/* ----- Why choose Start ----- */}
-      <div className="mt-5 mb-5">
-        <Container>
-          <Row>
-            <Col sm={12} md={6}>
-              <h2>Why choose us</h2>
-              <p className="text-secondary">
-                Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                vulputate velit imperdiet dolor tempor tristique.
-              </p>
-              <Row>
-                <Col>
-                  <Row className="mb-3">
-                    <i className="bi bi-truck fs-3"></i>
-                    <h6>Fast &amp; Free Shipping</h6>
-                    <p className="text-secondary">
-                      Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                      vulputate.
-                    </p>
-                  </Row>
-                  <Row>
-                    <i className="bi bi-cart-check fs-3"></i>
-                    <h6>Easy to shop</h6>
-                    <p className="text-secondary">
-                      Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                      vulputate.
-                    </p>
-                  </Row>
-                </Col>
-                <Col>
-                  <Row className="mb-3">
-                    <i className="bi bi-headset fs-3"></i>
-                    <h6>24/7 Support</h6>
-                    <p className="text-secondary">
-                      Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                      vulputate.
-                    </p>
-                  </Row>
-                  <Row>
-                    <i className="bi bi-arrow-repeat fs-3"></i>
-                    <h6>Return easily</h6>
-                    <p className="text-secondary">
-                      Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                      vulputate.
-                    </p>
-                  </Row>
-                </Col>
-              </Row>
-            </Col>
-            <Col sm={12} md={6} className="px-5 ">
-              <img className="img-fluid rounded-5" src="images/why-choose-us-img.jpg"></img>
-            </Col>
-          </Row>
-        </Container>
+      <div style={style.section}>
+        <WhyChooseUs></WhyChooseUs>
       </div>
+
       {/* ----- Why choose end ----- */}
 
       <br></br>
