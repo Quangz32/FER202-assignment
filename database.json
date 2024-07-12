@@ -1,0 +1,7 @@
+{
+  "products": [
+    { "id": 1, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
+    { "id": 2, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
+    { "id": 3, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" }
+  ]
+}
