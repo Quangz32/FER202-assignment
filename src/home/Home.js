@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import WhyChooseUs from "./WhyChooseUs";
 import HotProduct from "./HotProduct";
+import WeHelp from "./WeHelp";
+import FeedBack from "./FeedBack";
+import Footer from "../shared/Footer";
 
 export default function Home() {
   const style = {
-    home: {
+    bgGreen: {
       backgroundColor: "#3b5d50",
     },
     exploreBtn: { fontWeight: "550", "&:hover": {} },
@@ -21,7 +24,7 @@ export default function Home() {
   return (
     <div>
       {/* ------- Hero start --------*/}
-      <div style={style.home}>
+      <div style={style.bgGreen}>
         <Container>
           <Row className="d-flex align-items-center">
             <Col lg={5}>
@@ -60,28 +63,26 @@ export default function Home() {
           </Row>
         </Container>
       </div>
-      {/* ------- Hero End --------*/}
 
-      {/* ----- Product Start ----- */}
       <div style={style.section}>
         <HotProduct></HotProduct>
       </div>
 
-      {/* ----- Product end ----- */}
-
-      {/* ----- Why choose Start ----- */}
       <div style={style.section}>
         <WhyChooseUs></WhyChooseUs>
       </div>
 
-      {/* ----- Why choose end ----- */}
+      <div style={style.section}>
+        <WeHelp></WeHelp>
+      </div>
 
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <div style={style.section}>
+        <FeedBack></FeedBack>
+      </div>
+
+      <div style={style.bgGreen}>
+        <Footer></Footer>
+      </div>
     </div>
   );
 }

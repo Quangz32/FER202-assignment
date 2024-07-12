@@ -1,0 +1,16 @@
+.we-help-img-container {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  aspect-ratio: 1/1;
+}
+
+.we-help-img-item-1 {
+  grid-area: 1/1/18/14;
+}
+.we-help-img-item-2 {
+  grid-area: 1/14/7/21;
+}
+.we-help-img-item-3 {
+  grid-area: 8/11/21/21;
+}

@@ -2,6 +2,65 @@
   "products": [
     { "id": 1, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
     { "id": 2, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
+    { "id": 3, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" },
+    { "id": 1, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
+    { "id": 2, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
     { "id": 3, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Wick",
+      "dob": "10/10/1987",
+      "password": "123456",
+      "avatar": "avt1.png"
+    },
+    {
+      "id": 2,
+      "name": "Alice Smith",
+      "dob": "05/15/1992",
+      "password": "abcdef",
+      "avatar": "avt2.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "dob": "08/20/1985",
+      "password": "qwerty",
+      "avatar": "avt3.png"
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "dob": "03/25/1990",
+      "password": "p@ssw0rd",
+      "avatar": "avt4.jpeg"
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "product_id": 1,
+      "rating": 4,
+      "content": "I recently purchased this chair and I am extremely satisfied with my purchase. The quality of the chair is outstanding and it provides excellent comfort and support. The design is sleek and modern, adding a stylish touch to my living room.",
+      "timestamp": "2024-07-12 10:30:00"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "product_id": 1,
+      "rating": 5,
+      "content": "This chair exceeded my expectations! It's not only comfortable but also very durable. The materials used are of high quality, and the craftsmanship is excellent. I highly recommend this chair to anyone looking for a stylish and comfortable seating option.",
+      "timestamp": "2024-07-11 16:45:00"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "product_id": 1,
+      "rating": 4,
+      "content": "I love this chair! The ergonomic design provides great support for my back, and the cushioning is just right. It fits perfectly in my study room and adds a touch of elegance to the space. The assembly was also quick and easy. Overall, a fantastic chair!",
+      "timestamp": "2024-07-10 09:15:00"
+    }
   ]
 }
