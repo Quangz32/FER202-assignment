@@ -49,7 +49,7 @@ export default function MyNavbar() {
                   <Nav.Link className="mx-1">
                     <UserDropDown></UserDropDown>
                   </Nav.Link>
-                  <Nav.Link href={"cart"} className="mx-lg-2 ">
+                  <Nav.Link href="/cart" className="mx-lg-2 ">
                     <i className="bi bi-cart fs-4 fw-bold text-white"></i>
                   </Nav.Link>
                 </>

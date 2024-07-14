@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 import "./ProductCard.css"; // Import CSS styles
 import MyToast from "../shared/MyToast";
+import { useNavigate } from "react-router-dom";
+import { fetchCart } from "../../service/CartService";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, user }) {
+  const navigate = useNavigate();
+
   const [showToast, setShowToast] = useState(false);
-  const handleAddToCard = () => {
-    console.log("Add to card");
+
+  const handleAddToCard = (product) => {
+    if (!user) {
+      navigate("/login");
+    }
+
+    console.log("Add to cart");
     setShowToast(true);
   };
+
+  // console.log(user);
   return (
     <>
       <div className="text-center mb-5 product-card">

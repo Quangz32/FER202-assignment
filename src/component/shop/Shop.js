@@ -2,20 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Button, Col, Link } from "react-bootstrap";
 import axios from "axios";
 import ProductCard from "./ProductCard";
+import { getCart, getCartFullInfo } from "../../service/CartService";
+import { getAllProduct } from "../../service/ProductService";
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      await axios.get("http://localhost:9999/products").then((res) => {
-        // console.log(res);
-        setProducts(res.data);
-      });
+    const fetchProducts = async () => {
+      const res = await getAllProduct();
+      setProducts(res);
     };
 
-    fetchProduct();
+    fetchProducts();
   }, []);
+
+  // console.log(cart);
   return (
     <div>
       {/* ------- Hero start --------*/}
@@ -31,11 +34,14 @@ export default function Shop() {
       <div className="my-bg-green-3 pt-5">
         <Container>
           <Row>
-            {products?.map((product) => (
-              <Col key={product.id} row={12} md={4} lg={3} className="mb-5 mb-md-0">
-                <ProductCard product={product}></ProductCard>
-              </Col>
-            ))}
+            {products?.map(
+              (product) =>
+                product.stock > 0 && (
+                  <Col key={product.id} row={12} md={4} lg={3} className="mb-5 mb-md-0">
+                    <ProductCard product={product} user={user}></ProductCard>
+                  </Col>
+                )
+            )}
           </Row>
         </Container>
       </div>

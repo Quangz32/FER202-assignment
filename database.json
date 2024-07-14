@@ -1,16 +1,16 @@
 {
   "products": [
     { "id": 1, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
-    { "id": 2, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
-    { "id": 3, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" },
-    { "id": 4, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
-    { "id": 5, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
-    { "id": 6, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" },
-    { "id": 7, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
-    { "id": 8, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
-    { "id": 9, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" },
-    { "id": 10, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
-    { "id": 11, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" }
+    { "id": 2, "name": "Kruzo Aero Chair", "price": 79, "stock": 90, "image": "product-2.png" },
+    { "id": 3, "name": "Ergonomic Chair", "price": 39, "stock": 80, "image": "product-3.png" },
+    { "id": 4, "name": "Nordic Chair", "price": 49, "stock": 70, "image": "product-1.png" },
+    { "id": 5, "name": "Kruzo Aero Chair", "price": 79, "stock": 60, "image": "product-2.png" },
+    { "id": 6, "name": "Ergonomic Chair", "price": 39, "stock": 60, "image": "product-3.png" },
+    { "id": 7, "name": "Nordic Chair", "price": 49, "stock": 40, "image": "product-1.png" },
+    { "id": 8, "name": "Kruzo Aero Chair", "price": 79, "stock": 30, "image": "product-2.png" },
+    { "id": 9, "name": "Ergonomic Chair", "price": 39, "stock": 20, "image": "product-3.png" },
+    { "id": 10, "name": "Nordic Chair", "price": 49, "stock": 10, "image": "product-1.png" },
+    { "id": 11, "name": "Kruzo Aero Chair", "price": 79, "stock": 0, "image": "product-2.png" }
   ],
   "users": [
     {

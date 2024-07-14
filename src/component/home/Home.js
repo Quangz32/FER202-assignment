@@ -89,10 +89,6 @@ export default function Home() {
       <div style={style.section}>
         <HotBlogs></HotBlogs>
       </div>
-
-      <div className="my-bg-green-1">
-        <Footer></Footer>
-      </div>
     </div>
   );
 }
