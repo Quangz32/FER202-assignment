@@ -3,9 +3,14 @@
     { "id": 1, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
     { "id": 2, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
     { "id": 3, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" },
-    { "id": 1, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
-    { "id": 2, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
-    { "id": 3, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" }
+    { "id": 4, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
+    { "id": 5, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
+    { "id": 6, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" },
+    { "id": 7, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
+    { "id": 8, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" },
+    { "id": 9, "name": "Ergonomic Chair", "price": 39, "stock": 100, "image": "product-3.png" },
+    { "id": 10, "name": "Nordic Chair", "price": 49, "stock": 100, "image": "product-1.png" },
+    { "id": 11, "name": "Kruzo Aero Chair", "price": 79, "stock": 100, "image": "product-2.png" }
   ],
   "users": [
     {
@@ -91,6 +96,32 @@
       "date": "2024-04-20",
       "content": "Content goes here!",
       "cover_image": "post-3.jpg"
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "products": [
+        { "product_id": 1, "quantity": 2 },
+        { "product_id": 2, "quantity": 1 }
+      ]
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "products": [
+        { "product_id": 1, "quantity": 1 },
+        { "product_id": 3, "quantity": 2 }
+      ]
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "products": [
+        { "product_id": 2, "quantity": 2 },
+        { "product_id": 3, "quantity": 1 }
+      ]
     }
   ]
 }

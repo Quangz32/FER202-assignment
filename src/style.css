@@ -31,3 +31,7 @@ body {
 .my-bg-green-3 {
   background-color: #eff2f1 !important ;
 }
+
+.my-text-white-60 {
+  color: rgba(255, 255, 255, 0.6) !important;
+}

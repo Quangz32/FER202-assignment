@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./component/home/Home";
 import MyNavbar from "./component/shared/MyNavbar";
+import Shop from "./component/shop/Shop";
 
 import Login from "./component/login/Login";
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="home" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
+        <Route path="shop" element={<Shop />}></Route>
       </Routes>
     </>
   );
