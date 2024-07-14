@@ -12,12 +12,6 @@ import HotBlogs from "./HotBlogs";
 
 export default function Home() {
   const style = {
-    bgGreen: {
-      backgroundColor: "#3b5d50",
-    },
-    bgVeryLightGreen: {
-      backgroundColor: "#eff2f1",
-    },
     exploreBtn: { fontWeight: "550", "&:hover": {} },
     section: {
       marginTop: "128px",
@@ -26,9 +20,9 @@ export default function Home() {
   };
 
   return (
-    <div style={style.bgVeryLightGreen}>
+    <div className="my-bg-green-3">
       {/* ------- Hero start --------*/}
-      <div style={style.bgGreen}>
+      <div className="my-bg-green-1">
         <Container>
           <Row className="d-flex align-items-center">
             <Col lg={5}>
@@ -88,7 +82,7 @@ export default function Home() {
         <HotBlogs></HotBlogs>
       </div>
 
-      <div style={style.bgGreen}>
+      <div className="my-bg-green-1">
         <Footer></Footer>
       </div>
     </div>

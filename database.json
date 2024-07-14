@@ -10,30 +10,34 @@
   "users": [
     {
       "id": 1,
+      "email": "user1@gmail.com",
+      "password": "123456",
       "name": "John Wick",
       "dob": "10/10/1987",
-      "password": "123456",
       "avatar": "avt1.png"
     },
     {
       "id": 2,
+      "email": "user2@gmail.com",
+      "password": "123456",
       "name": "Alice Smith",
       "dob": "05/15/1992",
-      "password": "abcdef",
       "avatar": "avt2.jpeg"
     },
     {
       "id": 3,
+      "email": "user3@gmail.com",
+      "password": "123456",
       "name": "Bob Johnson",
       "dob": "08/20/1985",
-      "password": "qwerty",
       "avatar": "avt3.png"
     },
     {
       "id": 4,
+      "email": "user4@gmail.com",
+      "password": "123456",
       "name": "Emily Davis",
       "dob": "03/25/1990",
-      "password": "p@ssw0rd",
       "avatar": "avt4.jpeg"
     }
   ],

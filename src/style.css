@@ -21,3 +21,13 @@ body {
 .my-cursor-pointer {
   cursor: pointer !important;
 }
+
+.my-bg-green-1 {
+  background-color: #3b5d50 !important;
+}
+.my-bg-green-2 {
+  background-color: #496e67 !important;
+}
+.my-bg-green-3 {
+  background-color: #eff2f1 !important ;
+}
