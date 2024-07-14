@@ -17,3 +17,7 @@ body {
 /* .my-navbar {
   background-color: #3b5d50 !important;
 } */
+
+.my-cursor-pointer {
+  cursor: pointer !important;
+}

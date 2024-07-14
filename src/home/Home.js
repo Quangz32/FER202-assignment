@@ -15,6 +15,9 @@ export default function Home() {
     bgGreen: {
       backgroundColor: "#3b5d50",
     },
+    bgVeryLightGreen: {
+      backgroundColor: "#eff2f1",
+    },
     exploreBtn: { fontWeight: "550", "&:hover": {} },
     section: {
       marginTop: "128px",
@@ -23,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div style={style.bgVeryLightGreen}>
       {/* ------- Hero start --------*/}
       <div style={style.bgGreen}>
         <Container>

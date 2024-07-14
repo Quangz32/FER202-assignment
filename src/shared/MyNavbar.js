@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown, Dropdown } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
+import UserDropDown from "./UserDropDown";
 
 export default function MyNavbar() {
   const style = {
@@ -43,9 +44,14 @@ export default function MyNavbar() {
                   {page}
                 </Nav.Link>
               ))}
+
               <Nav.Link className="mx-1">
-                <i className="bi bi-person fs-4 text-white"></i>
+                <UserDropDown></UserDropDown>
               </Nav.Link>
+
+              {/* <Nav.Link className="mx-1">
+                <i className="bi bi-person fs-4 text-white"></i>
+              </Nav.Link> */}
               <Nav.Link href={"cart"} className="mx-lg-2 ">
                 <i className="bi bi-cart fs-4 fw-bold text-white"></i>
               </Nav.Link>

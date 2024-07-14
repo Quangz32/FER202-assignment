@@ -20,7 +20,7 @@ export default function HotBlogs() {
       <h3 className="mb-4">Recent Blog</h3>
       <Row>
         {blogs?.map((blog) => (
-          <Col sm={12} md={6} lg={4}>
+          <Col key={blog.id} sm={12} md={6} lg={4}>
             <BlogCard blog={blog}></BlogCard>
           </Col>
         ))}

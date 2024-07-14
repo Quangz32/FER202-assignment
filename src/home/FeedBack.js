@@ -29,7 +29,7 @@ export default function FeedBack() {
   }, []);
 
   const getFeedbackMaker = (feedback) => {
-    return users?.find((user) => user.id === feedback.user_id);
+    return users?.find((user) => parseInt(user.id) === feedback.user_id);
   };
 
   function formatTimestamp(timestamp) {
@@ -44,6 +44,7 @@ export default function FeedBack() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
   };
 
   const goToNextSlide = () => {
@@ -75,6 +76,7 @@ export default function FeedBack() {
                 <div className="d-flex justify-content-center">
                   <img
                     width={50}
+                    className="rounded-circle"
                     src={`images/avatars/${getFeedbackMaker(feedback)?.avatar}`}
                     alt="Avatar"
                   ></img>
