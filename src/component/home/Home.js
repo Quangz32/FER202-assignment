@@ -37,9 +37,17 @@ export default function Home() {
               <p>
                 <Link to="/shop" className="me-2">
                   <Button variant="warning" className="rounded-pill me-2 ">
-                    <span className="mx-3 py-2" style={{ fontWeight: "550" }}>
-                      Shop now
-                    </span>
+                    {localStorage.getItem("user") ? (
+                      <span className="mx-3 py-2" style={{ fontWeight: "550" }}>
+                        Shop now
+                      </span>
+                    ) : (
+                      <span className="mx-3 py-2" style={{ fontWeight: "550" }}>
+                        <Link className=" text-dark text-decoration-none" to="/login">
+                          Login
+                        </Link>
+                      </span>
+                    )}
                   </Button>
                 </Link>
                 <Link to="/blog">

@@ -28,7 +28,7 @@ export default function MyNavbar() {
     <>
       <Navbar expand="md" className="" data-bs-theme="dark" style={style.navBar}>
         <Container>
-          <Navbar.Brand href="home" className="fs-3" style={style.navBarBrand}>
+          <Navbar.Brand href="/home" className="fs-3" style={style.navBarBrand}>
             Qfuni<span className="opacity-50">.</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -44,17 +44,18 @@ export default function MyNavbar() {
                   {page}
                 </Nav.Link>
               ))}
-
-              <Nav.Link className="mx-1">
-                <UserDropDown></UserDropDown>
-              </Nav.Link>
-
-              {/* <Nav.Link className="mx-1">
-                <i className="bi bi-person fs-4 text-white"></i>
-              </Nav.Link> */}
-              <Nav.Link href={"cart"} className="mx-lg-2 ">
-                <i className="bi bi-cart fs-4 fw-bold text-white"></i>
-              </Nav.Link>
+              {localStorage.getItem("user") ? (
+                <>
+                  <Nav.Link className="mx-1">
+                    <UserDropDown></UserDropDown>
+                  </Nav.Link>
+                  <Nav.Link href={"cart"} className="mx-lg-2 ">
+                    <i className="bi bi-cart fs-4 fw-bold text-white"></i>
+                  </Nav.Link>
+                </>
+              ) : (
+                <></>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
