@@ -41,6 +41,7 @@ const createNewCart = async (userId) => {
     .post(`http://localhost:9999/carts`, {
       id: String(userId),
       user_id: userId,
+      products: [],
     })
     .then((res) => {
       console.log(res);
