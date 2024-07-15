@@ -166,14 +166,6 @@
   ],
   "carts": [
     {
-      "id": "1",
-      "user_id": 1,
-      "products": [
-        { "product_id": 1, "quantity": 2 },
-        { "product_id": 2, "quantity": 1 }
-      ]
-    },
-    {
       "id": "2",
       "user_id": 2,
       "products": [
@@ -200,6 +192,34 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "id": "1",
+      "user_id": 1
+    },
+    {
+      "id": "7",
+      "user_id": "7"
+    }
+  ],
+  "coupons": [
+    {
+      "id": "1",
+      "code": "COUPON1",
+      "percent": 10,
+      "max_discount": 10
+    },
+    {
+      "id": "2",
+      "code": "COUPON2",
+      "percent": 15,
+      "max_discount": 20
+    },
+    {
+      "id": "3",
+      "code": "COUPON3",
+      "percent": 20,
+      "max_discount": 5
     }
   ]
 }
