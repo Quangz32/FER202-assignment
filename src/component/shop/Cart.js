@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Container, FormControl, Table } from "react-bootstrap";
-import { getCartFullInfo, updateCard } from "../../service/CartService";
+import { getCartFullInfo, updateCart } from "../../service/CartService";
 import { getAllProduct } from "../../service/ProductService";
 import { useNavigate } from "react-router-dom";
 import MyToast from "../shared/MyToast";
@@ -54,7 +54,7 @@ export default function Cart() {
   };
 
   const handleSaveCart = async (cartState) => {
-    const cart = { ...cartState };
+    const cart = { ...cartState, id: String(cartState.id) };
     let newDetails = cart.products?.filter((p) => Object.keys(p).length > 0);
 
     newDetails = newDetails?.map((d) => ({
@@ -63,7 +63,7 @@ export default function Cart() {
     }));
 
     cart.products = newDetails;
-    updateCard(cart);
+    updateCart(cart);
 
     setShowToast(true);
   };

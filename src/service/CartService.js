@@ -24,7 +24,7 @@ const getCartFullInfo = async (userId, products) => {
   return updatedCart;
 };
 
-const updateCard = async (cart) => {
+const updateCart = async (cart) => {
   await axios
     .put(`http://localhost:9999/carts/${cart.id}`, cart)
     .then((res) => {
@@ -35,4 +35,49 @@ const updateCard = async (cart) => {
     });
 };
 
-export { getCart, getCartFullInfo, updateCard };
+const createNewCart = async (userId) => {
+  let newCart = {};
+  await axios
+    .post(`http://localhost:9999/carts`, {
+      id: String(userId),
+      user_id: userId,
+    })
+    .then((res) => {
+      console.log(res);
+      newCart = res.data;
+    })
+    .catch();
+
+  return newCart;
+};
+
+const addProductToCart = async (cart_id, product_id) => {
+  let cart = await getCart(cart_id); // Cart_id = user_id
+  if (!cart) {
+    cart = await createNewCart(cart_id);
+  }
+
+  let cartDetail = cart.products;
+  if (!cartDetail) {
+    cartDetail = [{ product_id: parseInt(product_id), quantity: 1 }];
+  } else {
+    let added = false;
+    cartDetail.forEach((detail) => {
+      if (parseInt(detail.product_id) === parseInt(product_id)) {
+        detail.quantity += 1;
+        added = true;
+      }
+    });
+
+    if (!added) {
+      cartDetail.push({ product_id: parseInt(product_id), quantity: 1 });
+    }
+  }
+
+  cart.products = cartDetail;
+  cart.id = String(cart.id);
+
+  updateCart(cart);
+};
+
+export { getCart, getCartFullInfo, updateCart, addProductToCart };

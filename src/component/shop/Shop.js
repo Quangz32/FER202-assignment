@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Button, Col, Link } from "react-bootstrap";
-import axios from "axios";
+import { Container, Row, Col } from "react-bootstrap";
 import ProductCard from "./ProductCard";
-import { getCart, getCartFullInfo } from "../../service/CartService";
 import { getAllProduct } from "../../service/ProductService";
 
 export default function Shop() {

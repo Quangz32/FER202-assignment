@@ -3,17 +3,19 @@ import { Col } from "react-bootstrap";
 import "./ProductCard.css"; // Import CSS styles
 import MyToast from "../shared/MyToast";
 import { useNavigate } from "react-router-dom";
-import { fetchCart } from "../../service/CartService";
+import { addProductToCart, fetchCart } from "../../service/CartService";
 
 export default function ProductCard({ product, user }) {
   const navigate = useNavigate();
 
   const [showToast, setShowToast] = useState(false);
 
-  const handleAddToCard = (product) => {
+  const handleAddToCard = async (product) => {
     if (!user) {
       navigate("/login");
     }
+
+    await addProductToCart(user.id, product.id);
 
     console.log("Add to cart");
     setShowToast(true);
