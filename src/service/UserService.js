@@ -40,3 +40,27 @@ export const addNewUser = async (userData) => {
     return { success: true, message: "Register success", data: res.data };
   }
 };
+
+export const changePassword = async (user, oldPassword, newPassword) => {
+  const getRes = await axios.get(`http://localhost:9999/users/${user.id}`);
+  const userInDB = getRes.data;
+  console.log(userInDB);
+
+  if (userInDB.password !== oldPassword) {
+    return {
+      success: false,
+      message: "Wrong current password",
+    };
+  }
+
+  const updatedUser = await axios.put(`http://localhost:9999/users/${user.id}`, {
+    ...userInDB,
+    password: newPassword,
+  });
+
+  return {
+    success: true,
+    message: "Your password has been updated",
+    data: updatedUser,
+  };
+};

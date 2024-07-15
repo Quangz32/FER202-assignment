@@ -32,6 +32,16 @@ export default function UserDropDown() {
       <Dropdown.Menu className="my-bg-green-2" style={{ width: "256px" }}>
         <div className="ms-3">
           <div className="my-1">Welcome, {user.name}</div>
+          <hr className="mb-1 mt-2"></hr>
+
+          <div
+            className="my-1"
+            onClick={() => {
+              navigate("/change_password");
+            }}
+          >
+            Change password
+          </div>
           {/* <div className="my-1">Info</div> */}
           <hr className="mb-1 mt-2"></hr>
           <div onClick={handleLogout} className="my-1">

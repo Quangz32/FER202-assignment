@@ -9,6 +9,7 @@ import { useLocation } from "react-router-dom";
 import Cart from "./component/shop/Cart";
 import Footer from "./component/shared/Footer";
 import Register from "./component/register/Register";
+import ChangePassword from "./component/changepassword/ChangePassword";
 
 function App() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function App() {
         <Route path="shop" element={<Shop />}></Route>
         <Route path="cart" element={<Cart />}></Route>
         <Route path="register" element={<Register />}></Route>
+        <Route path="change_password" element={<ChangePassword />}></Route>
       </Routes>
 
       {!location.pathname.endsWith("login") && !location.pathname.endsWith("register") && (
