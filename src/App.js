@@ -8,22 +8,26 @@ import Login from "./component/login/Login";
 import { useLocation } from "react-router-dom";
 import Cart from "./component/shop/Cart";
 import Footer from "./component/shared/Footer";
+import Register from "./component/register/Register";
 
 function App() {
   const location = useLocation();
 
   return (
     <>
-      {!location.pathname.endsWith("login") && <MyNavbar></MyNavbar>}
+      {!location.pathname.endsWith("login") && !location.pathname.endsWith("register") && (
+        <MyNavbar></MyNavbar>
+      )}
 
       <Routes>
         <Route path="home" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="shop" element={<Shop />}></Route>
         <Route path="cart" element={<Cart />}></Route>
+        <Route path="register" element={<Register />}></Route>
       </Routes>
 
-      {!location.pathname.endsWith("login") && (
+      {!location.pathname.endsWith("login") && !location.pathname.endsWith("register") && (
         <div className="my-bg-green-1">
           <Footer></Footer>
         </div>

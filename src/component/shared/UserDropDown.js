@@ -25,7 +25,7 @@ export default function UserDropDown() {
         <img
           width={30}
           height={30}
-          src={`images/avatars/avt1.png`}
+          src={`images/avatars/${user.avatar}`}
           className="rounded-circle mt-1"
         ></img>
       </Dropdown.Toggle>

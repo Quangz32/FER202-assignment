@@ -88,9 +88,8 @@ export default function Cart() {
       setCouponError("This is not a valid coupon");
       return;
     }
-
+    const calculatedDiscount = Math.min(coupon.max_discount, (total * coupon.percent) / 100);
     setCouponError("Apply coupon success");
-    const calculatedDiscount = Math.min(coupon.max_discount, total * coupon.percent);
     setDiscount(calculatedDiscount);
   };
 

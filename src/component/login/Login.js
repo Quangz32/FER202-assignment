@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Container, Form, Button, ToastContainer } from "react-bootstrap";
 import LoginService from "../../service/LoginService";
 import MyToast from "../shared/MyToast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function Login() {
   const [formData, setFormData] = useState({ email: "user1@gmail.com", password: "123456" });
   const [formError, setFormError] = useState({});
@@ -52,7 +52,6 @@ export default function Login() {
   };
   return (
     <>
-      {" "}
       <div className="my-bg-green-3">
         <Container className="d-flex flex-column justify-content-center align-items-center vh-100">
           <h1 className="mb-4">
@@ -114,6 +113,13 @@ export default function Login() {
                         Login
                       </span>
                     </Button>
+                  </div>
+
+                  <div className="d-flex  justify-content-around mt-3">
+                    <Link to="/register" className="text-white-50 text-decoration-none">
+                      Register now
+                    </Link>
+                    <Link className="text-white-50 text-decoration-none">Forgot password</Link>
                   </div>
                 </Form>
               </div>
