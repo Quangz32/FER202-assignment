@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Alert, Button, Container, FormControl, Table } from "react-bootstrap";
-import { getCartFullInfo } from "../../service/CartService";
+import { Button, Container, FormControl, Table } from "react-bootstrap";
+import { getCartFullInfo, updateCard } from "../../service/CartService";
 import { getAllProduct } from "../../service/ProductService";
+import { useNavigate } from "react-router-dom";
+import MyToast from "../shared/MyToast";
 
 export default function Cart() {
+  const navigate = useNavigate();
+
   const [cart, setCart] = useState({});
   const [products, setProducts] = useState([]);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -19,9 +24,7 @@ export default function Cart() {
 
   useEffect(() => {
     const fetchCart = async () => {
-      //   console.log(products);
       const res = await getCartFullInfo(user.id, products);
-      //   console.log(res);
       setCart(res);
     };
 
@@ -50,10 +53,23 @@ export default function Cart() {
     setCart(tempCart);
   };
 
-  console.log(cart);
+  const handleSaveCart = async (cartState) => {
+    const cart = { ...cartState };
+    let newDetails = cart.products?.filter((p) => Object.keys(p).length > 0);
+
+    newDetails = newDetails?.map((d) => ({
+      product_id: d.product_id,
+      quantity: d.quantity,
+    }));
+
+    cart.products = newDetails;
+    updateCard(cart);
+
+    setShowToast(true);
+  };
 
   return (
-    <div>
+    <>
       {/* ------- Hero --------*/}
       <div className="my-bg-green-1">
         <Container className="">
@@ -64,8 +80,27 @@ export default function Cart() {
       </div>
 
       {/* Cart table */}
+
       <div className="my-bg-green-3 pt-5" style={{ minHeight: "75vh" }}>
         <Container>
+          <div className="d-flex justify-content-end px-3 mb-3">
+            <Button
+              className="my-bg-green-1 me-4"
+              onClick={() => {
+                navigate("/shop");
+              }}
+            >
+              <i className="bi bi-arrow-return-left me-1"></i> Continue Shopping
+            </Button>
+            <Button
+              className="my-bg-green-1"
+              onClick={() => {
+                handleSaveCart(cart);
+              }}
+            >
+              Save cart
+            </Button>
+          </div>
           <Table striped bordered responsive hover style={{ border: "1px solid gray" }}>
             <thead>
               <tr className="text-center">
@@ -92,11 +127,11 @@ export default function Cart() {
                         ></img>
                       </td>
                       <td className=" my-vertical-align-center">
-                        <h5>{item?.product?.name}</h5>
+                        <span className="fs-5">{item?.product?.name}</span>
                       </td>
                       <td className=" my-vertical-align-center">${item?.product?.price}</td>
-                      <td className="w-25 my-vertical-align-center">
-                        <div className="w-50 d-flex justify-content-between justify-content-center mx-auto">
+                      <td className="my-vertical-align-center">
+                        <div className="d-flex justify-content-center justify-content-center mx-auto">
                           <Button
                             variant=""
                             onClick={() => {
@@ -107,9 +142,9 @@ export default function Cart() {
                           </Button>
                           <FormControl
                             className="mx-2"
+                            style={{ width: "100px" }}
                             type="number"
                             value={item?.quantity}
-                            // value={cart?.products[index].quantity}
                             onChange={(e) => {
                               handleQuantityChange(index, e.target.value);
                             }}
@@ -123,7 +158,7 @@ export default function Cart() {
                             <span className="fs-5">+</span>
                           </Button>
                         </div>
-                        <span>Available: {item.product.stock}</span>
+                        <span>Available: {item.product?.stock}</span>
                       </td>
                       <td className=" my-vertical-align-center">
                         ${item?.product?.price * item?.quantity}
@@ -145,6 +180,14 @@ export default function Cart() {
           </Table>
         </Container>
       </div>
-    </div>
+
+      <MyToast
+        show={showToast}
+        setShow={setShowToast}
+        variant="success"
+        position="top-right"
+        message={`Your cart has been updated`}
+      ></MyToast>
+    </>
   );
 }

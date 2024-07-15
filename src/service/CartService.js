@@ -14,16 +14,25 @@ const getCart = async (userId) => {
 
 const getCartFullInfo = async (userId, products) => {
   const cart = await getCart(userId);
-  //   const productInCart = cart.products;
-  //   console.log(cart.products);
-  //   console.log(products);
 
   const productInCartFullInfo = cart?.products?.map((item) => ({
     ...item,
-    product: products.find((p) => p.id === item.product_id),
+    product: products.find((p) => parseInt(p.id) === item.product_id),
   }));
 
-  return { ...cart, products: productInCartFullInfo };
+  const updatedCart = { ...cart, products: productInCartFullInfo };
+  return updatedCart;
 };
 
-export { getCart, getCartFullInfo };
+const updateCard = async (cart) => {
+  await axios
+    .put(`http://localhost:9999/carts/${cart.id}`, cart)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+};
+
+export { getCart, getCartFullInfo, updateCard };
