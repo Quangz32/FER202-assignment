@@ -64,3 +64,24 @@ export const changePassword = async (user, oldPassword, newPassword) => {
     data: updatedUser,
   };
 };
+
+export const updateUser = async (userData) => {
+  //Update name, email, and password
+  const requestMaker = JSON.parse(localStorage.getItem("user"));
+
+  const getRes = await axios.get(`http://localhost:9999/users/${requestMaker.id}`);
+  const userInDB = getRes.data;
+
+  const res = await axios.put(`http://localhost:9999/users/${requestMaker.id}`, {
+    ...userInDB,
+    name: userData.name,
+    email: userData.email,
+    dob: userData.dob,
+  });
+
+  return {
+    success: true,
+    message: "Your profile has been updated",
+    data: res.data,
+  };
+};

@@ -142,8 +142,8 @@ export default function ChangePassword() {
                   </Form.Group>
 
                   <div className="text-center">
-                    <Button variant="dark" type="submit">
-                      Submit
+                    <Button variant="dark" type="submit" className="rounded-pill">
+                      <span className="mx-2">Submit</span>
                     </Button>
                   </div>
                 </Form>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import MyLink from "./MyLink";
 
 export default function UserDropDown() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -34,14 +35,8 @@ export default function UserDropDown() {
           <div className="my-1">Welcome, {user.name}</div>
           <hr className="mb-1 mt-2"></hr>
 
-          <div
-            className="my-1"
-            onClick={() => {
-              navigate("/change_password");
-            }}
-          >
-            Change password
-          </div>
+          <MyLink to="/change_password">Change password</MyLink>
+          <MyLink to="/profile">Profile</MyLink>
           {/* <div className="my-1">Info</div> */}
           <hr className="mb-1 mt-2"></hr>
           <div onClick={handleLogout} className="my-1">

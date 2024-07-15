@@ -81,10 +81,10 @@
   "users": [
     {
       "id": "1",
-      "email": "user1@gmail.com",
+      "email": "user1@gm2ail.com",
       "password": "123456",
-      "name": "John Wick",
-      "dob": "10/10/1987",
+      "name": "John Wick12",
+      "dob": "2024-07-04",
       "avatar": "avt1.png"
     },
     {
@@ -92,7 +92,7 @@
       "email": "user2@gmail.com",
       "password": "123456",
       "name": "Alice Smith",
-      "dob": "05/15/1992",
+      "dob": "2024-07-12",
       "avatar": "avt2.jpeg"
     },
     {
@@ -100,7 +100,7 @@
       "email": "user3@gmail.com",
       "password": "123456",
       "name": "Bob Johnson",
-      "dob": "08/20/1985",
+      "dob": "2024-07-12",
       "avatar": "avt3.png"
     },
     {
@@ -108,7 +108,7 @@
       "email": "user4@gmail.com",
       "password": "123456",
       "name": "Emily Davis",
-      "dob": "03/25/1990",
+      "dob": "2024-07-12",
       "avatar": "avt4.jpeg"
     },
     {
@@ -203,7 +203,7 @@
     },
     {
       "id": "1",
-      "user_id": 1
+      "user_id": "1"
     },
     {
       "id": "7",

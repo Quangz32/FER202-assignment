@@ -10,6 +10,7 @@ import Cart from "./component/shop/Cart";
 import Footer from "./component/shared/Footer";
 import Register from "./component/register/Register";
 import ChangePassword from "./component/changepassword/ChangePassword";
+import Profile from "./component/profile/Profile";
 
 function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ function App() {
         <Route path="cart" element={<Cart />}></Route>
         <Route path="register" element={<Register />}></Route>
         <Route path="change_password" element={<ChangePassword />}></Route>
+        <Route path="profile" element={<Profile />}></Route>
       </Routes>
 
       {!location.pathname.endsWith("login") && !location.pathname.endsWith("register") && (
