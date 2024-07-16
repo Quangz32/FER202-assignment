@@ -14,8 +14,8 @@ export default function BlogCard({ blog }) {
       <div className="px-2 mt-2">
         <h5>{blog.title}</h5>
         <p>
-          by <span style={{ fontWeight: "567" }}>{blog.author}</span> on{" "}
-          <span style={{ fontWeight: "567" }}>{formatDate(blog.date)}</span>
+          by <span className=" my-fw-500">{blog.author}</span> on{" "}
+          <span className=" my-fw-500">{formatDate(blog.date)}</span>
         </p>
       </div>
     </div>

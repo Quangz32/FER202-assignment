@@ -11,6 +11,9 @@ import Footer from "./component/shared/Footer";
 import Register from "./component/register/Register";
 import ChangePassword from "./component/changepassword/ChangePassword";
 import Profile from "./component/profile/Profile";
+import BlogPage from "./component/blog/BlogPage";
+import ServicePage from "./component/service/ServicePage";
+import ContactPage from "./component/contact/ContactPage";
 
 function App() {
   const location = useLocation();
@@ -29,6 +32,9 @@ function App() {
         <Route path="register" element={<Register />}></Route>
         <Route path="change_password" element={<ChangePassword />}></Route>
         <Route path="profile" element={<Profile />}></Route>
+        <Route path="blog" element={<BlogPage />}></Route>
+        <Route path="service" element={<ServicePage />}></Route>
+        <Route path="contact" element={<ContactPage />}></Route>
       </Routes>
 
       {!location.pathname.endsWith("login") && !location.pathname.endsWith("register") && (

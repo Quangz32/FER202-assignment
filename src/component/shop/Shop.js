@@ -35,9 +35,7 @@ export default function Shop() {
                   <i className="bi bi-search"></i>
                 </InputGroup.Text>
                 <Form.Control
-                  placeholder="Username"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
+                  placeholder="search"
                   value={searchTerm}
                   onChange={(e) => {
                     setSearchTerm(e.target.value);

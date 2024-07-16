@@ -81,7 +81,7 @@
   "users": [
     {
       "id": "1",
-      "email": "user1@gm2ail.com",
+      "email": "user1@gmail.com",
       "password": "123456",
       "name": "John Wick12",
       "dob": "2024-07-04",
@@ -203,7 +203,17 @@
     },
     {
       "id": "1",
-      "user_id": "1"
+      "user_id": "1",
+      "products": [
+        {
+          "product_id": 2,
+          "quantity": 1
+        },
+        {
+          "product_id": 3,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": "7",
